@@ -5,6 +5,10 @@ export const HistoryContainer = styled.main`
   padding: 3.5rem;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  @media (max-width: 800px) {
+    padding: 2rem 0;
+  }
 
   h1 {
     font-size: 1.5rem;
@@ -64,7 +68,7 @@ const STATUS_COLORS = {
 } as const
 
 interface StatusProps {
-  statusColor: keyof typeof STATUS_COLORS
+  $statusColor: keyof typeof STATUS_COLORS
 }
 
 export const Status = styled.span<StatusProps>`
@@ -78,6 +82,6 @@ export const Status = styled.span<StatusProps>`
     height: 0.5rem;
     border-radius: 50%;
     background-color: ${(props) =>
-      props.theme[STATUS_COLORS[props.statusColor]]};
+      props.theme[STATUS_COLORS[props.$statusColor]]};
   }
 `

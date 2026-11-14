@@ -58,7 +58,7 @@ export function Home() {
             <option value="Read"></option>
           </datalist>
 
-          <label htmlFor=""> for </label>
+          <label htmlFor="minutesAmount"> for </label>
           <MinutesAmountInput
             type="number"
             id="minutesAmount"

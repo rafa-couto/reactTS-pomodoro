@@ -1,6 +1,20 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      // Resolve before paint, including when storage is unavailable.
+      let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      try {
+        const saved = localStorage.getItem('pomodoro-theme')
+        if (saved === 'light' || saved === 'dark') theme = saved
+      } catch {}
+      document.documentElement.dataset.theme = theme
+      document.documentElement.style.colorScheme = theme
+    </script>
+    <style>
+      html { background: #f0f2f1; }
+      html[data-theme='dark'] { background: #121214; }
+    </style>
     <meta charset="UTF-8" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
