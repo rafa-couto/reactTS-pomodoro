@@ -9,7 +9,11 @@ export const HeaderContainer = styled.header`
     display: flex;
     gap: 0.5rem;
 
-    a {
+    a,
+    button {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
       width: 3rem;
       height: 3rem;
       display: flex;
@@ -25,7 +29,7 @@ export const HeaderContainer = styled.header`
       }
 
       &.active {
-        color: ${(props) => props.theme['green-500']};
+        color: ${(props) => props.theme['green-300']};
       }
     }
   }
